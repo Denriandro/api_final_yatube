@@ -19,7 +19,6 @@ class PostSerializer(serializers.ModelSerializer):
     author = serializers.SlugRelatedField(
         slug_field='username', read_only=True
     )
-    comments = CommentSerializer(many=True, required=False)
 
     class Meta:
         model = Post
@@ -30,7 +29,6 @@ class PostSerializer(serializers.ModelSerializer):
             'image',
             'pub_date',
             'group',
-            'comments'
         )
 
 
